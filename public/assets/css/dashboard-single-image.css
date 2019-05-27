@@ -1,0 +1,27 @@
+.dash_decide {
+	display: flex;
+	justify-content: space-evenly;
+	height: 23px;
+	padding: 12px 0
+}
+.single_detail_view .dash_decide .dash_common {
+	width: 30%;
+	text-align: center;
+	cursor: pointer;
+	height: 15px;
+	padding: 12px 0;
+}
+.single_detail_view .dash_decide a.dash_approve {
+	color: white;
+	background-color: #92A560;
+	}
+.single_detail_view .dash_decide a.dash_delete {
+	color: white;
+	background-color: #D94A39;
+}
+.single_detail_view .dash_decide a.dash_approve:hover {
+	background-color: green;
+}
+.single_detail_view .dash_decide a.dash_delete:hover {
+	background-color: red;
+}

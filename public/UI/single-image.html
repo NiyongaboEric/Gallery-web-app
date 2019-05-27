@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Gallery Profile</title>
+	<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="../assets/css/single-image.css">
+</head>
+<body>
+	<div class="navbar_container">
+		<nav role="navigation">
+			<ul>
+				<li><img src="../assets/images/logo.png"></li>
+				<li class="nav-home-item"><a href="#">Home</a></li>
+				<li class="nav-home-item"><a href="#">Profile</a></li>
+				<li class="nav-home-item"><a href="#">upload</a></li>
+				<li class="nav-home-item-drop-down">Settings
+					<ul class="dropdown">
+						<li class="nav-home-item-drop-down-item"><a href="#">Logout</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+	</div>
+	<div class="single_image">
+		<div class="single_image_view">
+			<img src="../assets/images/10.jpg">
+		</div>
+		<div class="single_detail_view">
+			<div class="single_detail_description">
+				<p class="single_owner_title">Owner name</p>				
+				<p> i am a description of the picture you are reviewing Lorem ipsum dolor sit amet, consectetur adipisicing it, sed do eiusmod	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis ostrud exercitation ullamco laboris</p>
+				<p class="single_owner_date">12th Jan 2019</p>				
+			</div>
+			<div class="single_detail_rate_comment">
+				<p class="title">Add comment</p>
+				<form method="POST" action="#" onsubmit="return validate(this);">
+					<small class="input_errors"></small>
+					<input type="text" name="comment" class="comment" placeholder="write comment *">
+					<br/>
+					<select class="rate">
+						<option value="0" disabled>rate image</option>
+						<option value="1">Very Bad</option>
+						<option value="2">Bad</option>
+						<option value="3" selected>Good</option>
+						<option value="4">Very Good</option>
+						<option value="5">Excellent</option>
+					</select>
+					<br/>
+					<input type="submit" name="submit" class="submit" value="submit">
+				</form>
+			</div>
+			<div class="single_detail_description">
+				<h2>More comment</h2>
+				<p class="single_owner_title">other name</p>				
+				<p> i am a description of the picture you are reviewing Lorem ipsum dolor sit amet, consectetur adipisicing it, sed do eiusmod	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis ostrud exercitation ullamco laboris</p>
+				<p class="single_owner_date">Total rate 50/100</p>
+				<p class="single_owner_date">12th Jan 2019</p>
+				<hr>
+				<p class="single_owner_title">other name</p>				
+				<p> i am a description of the picture you are reviewing Lorem ipsum dolor sit amet, consectetur adipisicing it, sed do eiusmod	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis ostrud exercitation ullamco laboris</p>
+				<p class="single_owner_date">Total rate 50/100</p>
+				<p class="single_owner_date">12th Jan 2019</p>
+				<hr>
+				<p class="single_owner_title">other name</p>				
+				<p> i am a description of the picture you are reviewing Lorem ipsum dolor sit amet, consectetur adipisicing it, sed do eiusmod	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis ostrud exercitation ullamco laboris</p>
+				<p class="single_owner_date">Total rate 50/100</p>
+				<p class="single_owner_date">12th Jan 2019</p>
+			</div>	
+		</div>
+		<script src="../assets/scripts/single-image.js"></script>
+	</body>
+	</html>

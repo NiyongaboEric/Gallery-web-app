@@ -1,0 +1,46 @@
+.view_all_image{
+	background-color: #e1e1e1;
+	width: 50%;
+	margin: 0 auto;
+	padding: 0.3rem;
+}
+.single_image {
+	background-color: #fff;
+	padding: 1rem;
+	margin-bottom: 0.5rem;
+}
+.single_image > h2{
+	margin: .5rem auto;
+	font-size: 1.1rem;
+}
+.single_image > p{
+	margin: .5rem auto;
+	font-size: 1rem;	
+	}
+.single_image > a:hover{
+	color: #F7B5AF;
+}
+.view_image{
+	width: 100%;
+	height: 300px;
+	background-image: url("../images/11.jpg");
+	background-position: center center; 
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.view_image:hover {
+    opacity: .9;
+    transform: scale;
+}
+
+@media screen and (min-width: 360px) and (max-width: 500px){
+	.view_all_image{
+		width: 90%;
+	}
+}
+
+@media screen and (min-width: 502px) and (max-width: 800px){
+	.view_all_image{
+		width: 70%;
+	}
+}

@@ -1,0 +1,51 @@
+.container_post_image {
+	height: 100%;
+}
+.add_post {
+	background-color: white;
+	margin: auto;
+	padding: 40px;
+	width: 37%;
+	top: 10%;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	position: relative;
+}
+
+.post_title{
+	font-weight: bold;
+	margin-top: 5px;
+	margin-bottom: 25px;
+	font-family: "Gill Sans", sans-serif;
+	font-size: 18px;
+	color: #565656;
+}
+
+input[type="file"]{
+	margin-bottom: 10px;
+	height: 35px;
+	border: none;
+	width: 100%;
+	outline: none;
+}
+
+.add_post textarea{
+	width: 100%;
+	height: auto;
+}
+input[type="submit"] {
+	height: 35px;
+	background-color: #4CAF50;
+	width: 100%;
+	border: none;
+	color: white;
+}
+
+
+/*screen resolution between 361px && 640px */
+@media screen and (min-width: 360px ) and (max-width: 640px){
+	.add_post {
+		width: 60%;
+	}
+}

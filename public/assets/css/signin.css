@@ -1,0 +1,50 @@
+.container_signin {
+	background-image: url("../images/signin_bcg.jpeg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100%;
+}
+.signin {
+	background-color: white;
+	margin: auto;
+	padding: 40px;
+	width: 37%;
+	top: 20%;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	position: relative;
+}
+
+.signin_title{
+	font-weight: bold;
+	margin-top: 5px;
+	margin-bottom: 25px;
+	font-family: "Gill Sans", sans-serif;
+	font-size: 18px;
+	color: #565656;
+}
+
+input[type="email"], input[type="password"]{
+	margin-bottom: 20px;
+	height: 35px;
+	border: none;
+	border-bottom: 0.1px solid gray;
+	width: 100%;
+	outline: none;
+}
+input[type="submit"] {
+	height: 35px;
+	background-color: #4CAF50;
+	width: 100%;
+	border: none;
+	color: white;
+}
+
+
+/*screen resolution between 361px && 640px */
+@media screen and (min-width: 360px ) and (max-width: 640px){
+	.signin {
+		width: 60%;
+	}
+}

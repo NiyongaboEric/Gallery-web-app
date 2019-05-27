@@ -1,0 +1,48 @@
+
+.signup {
+	display: table;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #ffffff;
+	width: 37%;
+	padding: 40px;
+	margin-top: 30px;
+}
+.signup_title{
+	font-weight: bold;
+	margin-top: 5px;
+	margin-bottom: 25px;
+	font-family: "Times New Roman", Times;
+	font-size: 20px;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+	margin-bottom: 20px;
+	height: 35px;
+	border: none;
+	border-bottom: 0.1px solid gray;
+	width: 100%;
+	outline: none;
+}
+input[type="checkbox"] {
+	padding: 0;
+	margin: 0;
+}
+input[type="submit"] {
+	float: right;
+	height: 35px;
+	background-color: #4CAF50;
+	width: 25%;
+	border: none;
+	color: white;
+}
+input[type="submit"]:hover{
+	border: 1px solid green !important;
+}
+
+/*screen resolution between 361px && 640px */
+@media screen and (min-width: 360px ) and (max-width: 640px){
+	.signup {
+		width: 60%;
+	}
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Gallery Add Image</title>
+	<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="../assets/css/post-image.css">
+</head>
+<body>
+	<div class="navbar_container">
+		<nav role="navigation">
+			<ul>
+				<li><img src="../assets/images/logo.png"></li>
+				<li class="nav-home-item"><a href="#">Home</a></li>
+				<li class="nav-home-item"><a href="#">Profile</a></li>
+				<li class="nav-home-item"><a href="#">upload</a></li>
+				<li class="nav-home-item-drop-down">Settings
+					<ul class="dropdown">
+						<li class="nav-home-item-drop-down-item"><a href="#">Logout</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+	</div>
+	<div class="container_post_image">
+		<div class="add_post">
+			<p class="post_title">Add new image</p>
+			<form method="POST" action="#" onsubmit="return validate(this);">
+				<small class="input_errors"></small>
+				<br/>
+				<input type="file" name="file" class="file" accept="image/*">
+				<br/>
+				<img src="" name="verify_image" class="verify_image">
+				<br/>
+				<textarea rows="4" cols="45" class="description" placeholder="enter an image description"></textarea>
+				<br/>
+				<input type="submit" name="submit" class="submit" value="Upload image">
+			</form>
+		</div>
+	</div>
+	<script src="../assets/scripts/post-image.js"></script>
+</body>
+</html>
