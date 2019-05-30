@@ -6,11 +6,10 @@ const should = require('chai').should();
 chai.use(chaiHttp);
 
 const userTest = { 
-
 	"first_name": 'Eric',
-	"last_name": 'Johns',
+	"last_name": 'Dasmony',
 	"address": 'kg 543 st',
-	"email": 'e2@gmail.com',
+	"email": 'test@gmail.com',
 	"password": "12341",
 }
 
