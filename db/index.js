@@ -23,4 +23,3 @@ module.exports = {
 // db.query("CREATE TABLE users(user_id SERIAL PRIMARY KEY, first_name VARCHAR(500) NOT NULL,	last_name VARCHAR(500) NOT NULL,	address VARCHAR(500),	email VARCHAR(500) UNIQUE NOT NULL,	password VARCHAR(100) NOT NULL,	isAdmin Boolean,	Date_time TIMESTAMPTZ)")
 // .then(res => console.log(res))
 // .catch(error => console.log(error));
-
