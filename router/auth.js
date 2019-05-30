@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const db = require('../db/index.js');
 const Joi = require('@hapi/joi');
+const bcrypt = require("bcrypt");
 
 //register a user
 router.post('/register', (request, response, next) => {
@@ -10,6 +11,13 @@ validation = async() => {
 	delete request.body.submit;
 	delete request.body.checkbox;
 	delete request.body.confirm_password;
+
+	//hash password
+	let salt = bcrypt.genSaltSync(10);
+	let hash = bcrypt.hashSync(request.body.password, salt);
+	request.body.password = hash;
+
+
 
 	return new Promise((resolve, reject) => {
 		const schema = Joi.object().keys({
