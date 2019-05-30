@@ -1,18 +1,11 @@
-language: node__js
-node__js:
-- 10.15.3
-cache: npm
+language: node_js
 
-install:
- - npm install
+node__js:
+  - 10.15.3
 
 script:
- - npm test
- - npm run build
+  - npm run test
+  - npm run build
 
-deploy:
-	provider: pages
-	skip-cleanup: true
-	github-token: $GITHUB_TOKEN
-	on:
-		branch: develop
+notifications:
+  email: false
