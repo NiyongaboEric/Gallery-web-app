@@ -9,8 +9,9 @@ install:
   - "npm ci"
 language: node_js
 node_js: 
-  - 10
+  - "10"
 notifications: 
   email: false
 script: 
-  - "npm run test"
+  test: "mocha"
+  # - "npm run test"
