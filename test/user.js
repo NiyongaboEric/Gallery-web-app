@@ -6,7 +6,7 @@ const should = require('chai').should();
 chai.use(chaiHttp);
 
 const userTest = { 
-	"first_name": 'Eric',
+	// "first_name": 'Eric',
 	"last_name": 'Dasmony',
 	"address": 'kg 543 st',
 	"email": 'test@gmail.com',
@@ -58,7 +58,7 @@ describe('Registration form test', () => {
 	done();
 });*/
 
-/*it("should validate first_name ", (done) => {
+it("should validate first_name ", (done) => {
 	chai.request("http://localhost:3000")
 	.post('/auth/register')
 	.send(userTest)
@@ -67,9 +67,9 @@ describe('Registration form test', () => {
 		(res.body).should.have.property("error", '"first_name" is required');
 	});
 	done();
-});*/
+});
 
-/*it("should length no to be zero", (done) => {
+it("should length to be greater than zero", (done) => {
 	chai.request("http://localhost:3000")
 	.post('/auth/register')
 	.send(userTest)
@@ -78,7 +78,5 @@ describe('Registration form test', () => {
 		(userTest.last_name).should.have.lengthOf(5);
 	});
 	done();
-});*/
-
-
+});
 });
