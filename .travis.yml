@@ -13,5 +13,4 @@ node_js:
 notifications: 
   email: false
 script: 
-  test: "mocha"
-  # - "npm run test"
+  - "npm run test"
