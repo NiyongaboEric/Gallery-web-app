@@ -2,6 +2,7 @@ const chai = require('chai');
 const chaiHttp = require('chai-http');
 const expect = require('chai').expect;
 const should = require('chai').should();
+const assert = require('chai').assert;
 
 chai.use(chaiHttp);
 
@@ -9,7 +10,7 @@ const newUser = {
 	"first_name": 'new',
 	"last_name": 'user',
 	"address": 'kg 543 st',
-	"email": 'newuser6@gmail.com',
+	"email": 'newuser7@gmail.com',
 	"password": "12341",
 }
 
@@ -36,7 +37,6 @@ describe('Registration form test', () => {
 		.post('/auth/register')
 		.send(newUser)
 		.end((req, res) => {
-			console.log(this, req.body);
    expect(res).to.have.status(201);
   })
 		done();
