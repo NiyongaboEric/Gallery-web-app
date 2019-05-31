@@ -1,20 +1,209 @@
-language: node_js
-
-node_js:
-  - 10.15.3
-
 cache: npm
+deploy: 
+  github-token: $GITHUB_TOKEN
+  provider: pages
+  skip-cleanup: true
+  true: 
+    branch: develop
+install: 
+  - "npm ci"
+language: node_js
+node_js: 
+  - node
+script: 
+  - "npm test"
+  - "npm run build"
 
-install:
-  - npm ci
 
-script:
-  - npm test
-  - npm run build
 
-deploy:
-	provider: pages
-	skip-cleanup: true
-	github-token: $GITHUB_TOKEN
-	on:
-		branch: develop
+
+
+
+
+
+
+
+
+
+
+# language: node_js
+
+# node_js:
+#   - node
+
+# cache: npm
+
+# install:
+#   - npm ci
+
+# script:
+#   - npm test
+#   - npm run build
+
+# deploy:
+# 	provider: pages
+# 	skip-cleanup: true
+# 	github-token: $GITHUB_TOKEN
+# 	on:
+# 		branch: develop
+
+
+
+
+
+# #name your jobs within buil stages
+# jobs:
+#   include:
+#     -  stage: "Tests" 														#naming the Tests stage
+#        name: "unit Tests"											#names the first Tests stage job
+#        script: ./unit-tests
+#     -  script: ./integration-tests
+#     			name: "Integration Tests"				#names the second Test stage job
+#     -		stage: deploy
+#     			name: "Deploy to GCP"
+#     			script: ./deploy
+
+# #build stages and build Matrix Expansion
+# rvm:
+#   - 2.3
+#   - 2.4
+# jobs:
+#   include:
+#     - stage: deploy
+#       rvm: 2.4
+#       env:
+#         - FOO=foo
+#       script: ./deploy
+
+# #specifying stage order and condition
+# stages:
+#    - compile
+#    - test
+#    - deploy
+
+# #build stages and deployment
+# jobs:
+# 		include:
+# 				- script: ./test 1 				#uses the default stage name "test"
+# 				- script: ./test 2
+# 				- stage: deploy
+# 				script: skip 										#	usually you do not want to rerun only tests
+# 				deploy: &heroku
+# 						provider: heroku
+# 						# ...
+
+# # blocklist
+# branches:
+#   except:
+#   - legacy
+#   - experimental
+
+# # safelist
+# branches:
+#   only:
+#   - master
+#   - stable
+
+
+# # Mocha's New Build using Stages
+# stages:
+#   - smoke #this ensures a "user" install works properly
+#   - precache #warm up cache for default Node.js version
+#   - lint #lint code and docs
+#   - test #all test
+
+# # Default Job configuration
+# language: node__js
+# node_js: '9'
+
+# before_script: npm install -g npm@5.8.0
+
+# #job default
+# before_install: |[[ ! -x ~/npm/node_modules/.bin/npm ]] && { cd ~/npm && npm install npm cd - } || true
+# env: PATH=~/npm/node_modules/ .bin:$PATH
+# cache: 
+#   - ~/.npm #cache npm's cache
+#   - ~/npm # cache latest npm
+
+# #keep installation separate from the working copy
+# install: npm ci --ignore-scripts
+
+# - &smoke
+# 	 stage: smoke
+# 	 install: npm install --production --no-shrinkwrap
+# 	 script: >
+# 	   ./bin/mocha --opts /dev/null --reporter spec test/sanity/sanity.spec.js
+# 	 cache:
+# 	 	directories:
+# 	 	  - /~.npm
+# 	 	  - node_modules
+
+
+# -	<<: *smoke
+#   node__js: '8'
+
+# - <<: *smoke
+# 		node__js: '6'
+
+
+
+
+# # An Aside: YAML Anchors & Aliases
+# const baseSmoke = {
+# 	stage: 'smoke',
+# 	install: 'npm install --production --no-shrinkwrap'
+# 	// etc
+# };
+
+
+# const smokeStage = [
+# 			baseSmoke,
+# 			Object.assign({}, baseSmoke, {node__js: "8"}),
+# 			Object.assign({}, baseSmoke, {node__js: "6"}),
+# 			Object.assign({}, baseSmoke, {node__js: "4"})
+# ];
+
+
+# # seriarize json
+# [
+# 	{
+# 		"stage": "smoke",
+# 		"install": "npm install --production --no-shrinkwrap"
+# 	},
+# 	{
+# 			"stage": "smoke",
+# 			"install": "npm install --production --no-shrinkwrap",
+# 			"node__js": "8"
+# 	}
+# ]
+
+# # Build Stage 2: Pre-cache
+#  - stage: precache
+#  		script: true
+
+# # build stage 3: Lint
+# 	- stage: lint
+#    script: npm start lint
+
+# #build a test
+# -  script: COVERAGE=1 npm start test.node
+#    after_success: npm start coveralls
+
+# # omit coverage variables
+# - &node
+#   script: npm start test.node
+#   node__js: '8'
+
+# -  <<: *node
+# 			node_js: '6'
+
+# # browser test
+# - script: npm start test.bundle test.browser
+#   install: npm ci
+#   addons:
+#     artifacts:
+#       paths:
+#       		- .karma/
+#       		- ./mocha.js
+#      chrome: stable
+#      sauce_connect: true
