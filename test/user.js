@@ -5,10 +5,9 @@ const should = require('chai').should();
 
 chai.use(chaiHttp);
 
-//register new user
 const newUser = { 
-	"first_name": 'Eric',
-	"last_name": 'Dasmony',
+	"first_name": 'new',
+	"last_name": 'user',
 	"address": 'kg 543 st',
 	"email": 'newuser@gmail.com',
 	"password": "12341",
@@ -52,6 +51,26 @@ describe('Registration form test', () => {
  	done();
  });
 
+	it("should register a new user", (done) => {
+		chai.request("http://localhost:3000")
+		.post('/auth/register')
+		.send(newUser)
+		.end((req, res) => {
+   expect(res).to.have.status(201);
+  })
+		done();
+	});
+
+	it("should return successfuly message", (done) => {
+		chai.request("http://localhost:3000")
+		.post('/auth/register')
+		.send(newUser)
+		.end((req, res) => {
+   expect(res.body).to.have.property("message", "registered successfuly");
+ 	});
+ 	done();
+ });
+
 it("should return error email already taken message", (done) => {
 	chai.request("http://localhost:3000")
 	.post('/auth/register')
@@ -62,7 +81,7 @@ it("should return error email already taken message", (done) => {
 	done();
 });
 
-it("should validate and return input status code", (done) => {
+it("should return email already taken status code", (done) => {
 	chai.request("http://localhost:3000")
 	.post('/auth/register')
 	.send(emailAlreadyTaken)
@@ -82,7 +101,7 @@ it("should validate first_name ", (done) => {
 	done();
 });
 
-it("should length to be greater than zero", (done) => {
+it("should length no to be zero", (done) => {
 	chai.request("http://localhost:3000")
 	.post('/auth/register')
 	.send(inputValidation)
