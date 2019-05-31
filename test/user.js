@@ -37,6 +37,8 @@ describe('Registration form test', () => {
 		.post('/auth/register')
 		.send(newUser)
 		.end((req, res) => {
+			console.log(res);
+			console.log("****");
    expect(res).to.have.status(201);
   })
 		done();
