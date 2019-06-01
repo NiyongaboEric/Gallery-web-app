@@ -10,7 +10,7 @@ const newUser = {
 	"first_name": 'new',
 	"last_name": 'user',
 	"address": 'kg 543 st',
-	"email": 'newuser8@gmail.com',
+	"email": 'newuser9@gmail.com',
 	"password": "12341",
 }
 
@@ -33,7 +33,7 @@ const inputValidation = {
 
 describe('Registration form test', () => {
 	it("should register a new user", (done) => {
-		chai.request("http://127.0.0.1:3000")
+		chai.request("http://localhost:3000")
 		.post('/auth/register')
 		.send(newUser)
 		.end((req, res) => {
