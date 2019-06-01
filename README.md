@@ -11,10 +11,11 @@
 #Swagger Api Docs
 it is designed using swagger package.
 
-```sh
+```
 		swagger-jsdoc	
 		swagger-ui-express	
-```sh
+```
+
 i begin with user registration where i CRUD application .
     		#How user api works?
     - create a TAG to separate the Api created
