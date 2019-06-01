@@ -33,7 +33,7 @@ const inputValidation = {
 
 describe('Registration form test', () => {
 	it("should register a new user", (done) => {
-		chai.request("http://localhost:3000")
+		chai.request("http://localhost:3000/")
 		.post('/auth/register')
 		.send(newUser)
 		.end((req, res) => {
