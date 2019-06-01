@@ -16,7 +16,7 @@ it is designed using swagger package.
 		swagger-ui-express	
 ```
 
-i begin with user registration where i CRUD application .
+#i begin with user registration where i CRUD application.
     		#How user api works?
     - create a TAG to separate the Api created
     - create unique and reusable models
