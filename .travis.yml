@@ -1,11 +1,4 @@
 cache: npm
-deploy: 
-  github-token: $GITHUB_TOKEN
-  provider: pages
-  skip-cleanup: true
-  true: 
-    branch: develop
-install: 
   - "npm ci"
 language: node_js
 node_js: 
