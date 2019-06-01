@@ -1,7 +1,8 @@
+before_script: "– npm update -g npm"
 cache: npm
 deploy: 
   github-token: $GITHUB_TOKEN
-  provider: heroku
+  provider: pages
   skip-cleanup: true
   true: 
     branch: develop
@@ -13,6 +14,4 @@ node_js:
 notifications: 
   email: false
 script: 
-  - "npm test"
-services: 
-  - postgres
+  - "npm run test"
