@@ -1,9 +1,7 @@
 cache: npm
-default: 
-  cv1: "<%=ENV[NODE_TLS_REJECT_UNAUTHORIZED=0] %>"
 deploy: 
   github-token: $GITHUB_TOKEN
-  provider: pages
+  provider: heroku
   skip-cleanup: true
   true: 
     branch: develop
@@ -15,4 +13,6 @@ node_js:
 notifications: 
   email: false
 script: 
-  - "npm run test"
+  - "npm test"
+services: 
+  - postgres
