@@ -1,9 +1,16 @@
 cache: npm
+deploy: 
+  github-token: $GITHUB_TOKEN
+  provider: pages
+  skip-cleanup: true
+  true: 
+    branch: develop
+install: 
   - "npm ci"
 language: node_js
 node_js: 
-  - "10"
+  - "node"
 notifications: 
   email: false
 script: 
-  - "npm run test"
+  - "mocha test"
