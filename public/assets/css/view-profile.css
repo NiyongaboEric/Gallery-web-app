@@ -1,0 +1,32 @@
+.container_profile .profile_image {
+	width: 200px;
+	padding: 0.5rem;
+	background-color: white;
+	margin: .5rem 0.4rem 1rem 0;
+}
+.container_profile .profile_image img{
+	width: 200px;
+	height: 100px;
+	margin: 2rem 0;
+}
+.container_profile .profile_image img:hover{
+	opacity: 0.9;
+}
+.container_profile hr {
+	margin: 0.1rem 0;
+}
+.container_profile a.view_image:hover {
+	color: #2A6637;
+}
+.container_profile a.delete_image:hover {
+	color: #FF5F5B;
+}
+.container_profile {
+	font-family: monospace;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.container_profile .profile_image {
+	box-shadow: inset 0px 0px 1px 0px #000;
+}

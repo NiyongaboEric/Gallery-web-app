@@ -1,0 +1,250 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Gallery nodejs website",
+    "description": "Gallery has 2 ways to interact with system, either you can navigate to localhost:3000 and use designed UI or use API to CRUD and Auth"
+  },
+  "tags": [
+    {
+      "name":"Galley",
+      "description": "API for Galley web application"
+    }
+  ],
+  "paths": {
+    "/auth/register": {
+     "get": {
+         "tags": [
+             "Auth gallery"
+         ],
+         "summary": "all signed users",
+         "responses": {
+             "200": {
+                 "description": "OK",
+                 "schema": {
+                     "$ref": "#/components/schemas/signup_success"
+                 }
+             }
+         }
+     }
+     ,
+      "post": {
+        "tags": [
+          "Auth gallery"
+        ],
+        "summary": "signup in system",
+        "requestBody": {
+          "description": "form requirement",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Register"
+              }
+            }
+          }
+        },
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/components/schemas/signup_success"
+            }
+          },
+          "400": {
+            "description": "Failed. Bad post data."
+          }
+        }
+      }
+    },
+    "/auth/register/{id}":{
+      "parameters": [
+        {
+         "name": "id",
+         "in": "path",
+         "required": true,
+         "description": "user ID is needed to match your request",
+         "type": "string"
+        }
+      ],
+      "get": {
+       "tags": [
+        "Auth gallery"
+       ],
+       "summary": "Get User with given ID",
+       "parameters": [
+         {
+          "in":"path",
+          "name": "id",
+          "require": true,
+          "description": "User with id",
+          "schema": {
+            "$ref": "#/components/schemas/user_ID"
+          }
+         }
+       ],
+       "responses": {
+         "200": {
+          "description": "OK",
+          "schema": {
+           "$ref": "#/components/schemas/Register"
+          }          
+         },
+         "404": {
+           "description": "Failed. User not found"
+         }
+       }
+      },
+      "put": {
+       "tags": [
+           "Auth gallery"
+       ],
+       "summary": "Update user with given ID",
+       "requestBody": {
+        "description": "user input Object",
+        "required": true,
+        "content": {
+         "application/json": {
+          "schema": {
+           "$ref": "#/components/schemas/edit_user"
+          }
+         }
+        }
+        },
+        "parameters": [
+         {
+          "in": "path",
+          "name": "id",
+          "required": true,
+          "description": "user with new values of properties",
+          "schema": {
+           "$ref": "#/components/schemas/edit_user"
+          }
+         }
+        ],
+       "responses": {
+         "200": {
+          "description": "OK",
+          "schema": {
+           "$ref": "#/components/schemas/Register"
+          }
+         },
+         "400": {
+          "description": "Failed. Bad post data."
+         },
+         "404": {
+          "description": "Failed. user not found."
+         }
+       }
+      },
+      "delete": {
+       "tags": [
+        "Auth gallery"
+       ],
+       "summary": "Delete user with given ID",
+       "parameters": [
+         {
+          "in": "path",
+          "name": "id",
+          "required": true,
+          "description": "Delete user with id",
+          "schema": {
+          "$ref": "#/components/schemas/user_ID"
+           }
+          }
+       ],
+       "responses": {
+        "200": {
+         "description": "OK",
+         "schema": {
+          "$ref": "#/components/schemas/user_ID"
+         }
+        },
+        "404": {
+         "description": "Failed. user not found."
+        }
+       }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Register": {
+        "properties": {
+          "first_name": {
+            "type": "string"
+          },
+           "last_name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
+          }
+        }
+      },
+      "signup_success": {
+        "type": "object",
+        "properties": {
+         "id": {
+          "description": "1",
+          "type": "integer"
+         },
+          "first_name": {
+          "description": "your first_name",
+          "type": "string"
+         },
+         "last_name": {
+          "description": "your last_name",
+          "type": "string"
+         },
+         "address": {
+          "description": "your address",
+          "type": "string"
+         },
+         "email": {
+          "description": "your email",
+          "type": "string"
+         },
+         "password": {
+          "description": "your Hashed password",
+          "type": "string"
+         },
+         "timestamp": {
+           "description": "2019-05-30 09:38:17.278+02",
+           "type": "string"
+          }
+        }
+      },
+      "user_ID":{
+       "properties": {
+        "id":{
+         "type": "string"         
+        }
+       }
+      },
+      "edit_user": {
+        "properties": {
+          "first_name": {
+            "type": "string"
+          },
+           "last_name": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,147 @@
+html {
+	height: 100%;
+}
+body {
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	background-color: #e9edf0;
+	height: 100%;
+	width: 100%;
+}
+.container {
+	min-height: 100% !important;
+}
+p{
+	margin: 0;
+	padding: 0;
+}
+hr {
+	padding: 0;
+	margin: 0;
+}
+footer{
+	text-align: center;
+}
+
+ul{
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+ul {
+	list-style: none;
+}
+
+/* Navbar style */
+.navbar_container nav {
+	font-family: monospace;
+	padding-left: 1rem;
+}
+.navbar_container li {
+	display: block;
+	float: left;
+	padding-top: 1rem;
+	position: relative;
+	text-decoration: none;
+	transition-duration: 0.5s;
+}
+
+.navbar_container ul li.nav-home-item a {
+	color: white;
+}
+
+.navbar_container li.nav-home-item:hover {
+	background-color: grey;
+	cursor: pointer;
+}
+
+.navbar_container ul li img {
+	padding-right: 30px;
+}
+
+.navbar_container ul li.nav-home-item, .navbar_container ul li.nav-home-item-drop-down {
+	top: 1.1rem;
+	padding: 10px;
+	font-size: 1rem;
+}
+
+.navbar_container .nav-home-item-drop-down {
+	color: white;
+	cursor: pointer;
+}
+
+/*Drop down*/
+.navbar_container ul li ul{
+	background-color: white;
+	text-align: center;
+	visibility: hidden;
+	opacity: 0;
+	width: 90px;
+	position: absolute;
+	transition: all 0.5s ease;
+	margin-top: 0.5rem;
+	left: 0;
+	display: none;
+}
+
+.navbar_container ul li:hover > ul, .navbar_container ul li ul:hover {
+	visibility: visible;
+	opacity: 1;
+	display: block;
+}
+.navbar_container li.nav-home-item-drop-down li.nav-home-item-drop-down-item a:hover {
+	color: blue;
+}
+.navbar_container ul li ul li{
+	clear: both;
+	width: 100%;
+}
+
+.navbar_container{
+	background-color: #F0948A !important;
+	width: 100%;
+	height: 75px;
+}
+
+/* responsiveness */
+@media screen and (min-width: 360px) and (max-width: 410px){
+	.navbar_container ul li.nav-home-item, .navbar_container ul li.nav-home-item-drop-down {
+		top: 1.5rem;
+		padding: 3px;
+		font-size: 13px;
+	}
+	.navbar_container nav{
+		padding-left: 5px;
+	}
+	.navbar_container ul li img {
+		padding-right: 3px;
+	}
+}
+@media screen and (min-width: 411px) and (max-width: 499px){
+	.navbar_container ul li.nav-home-item, .navbar_container ul li.nav-home-item-drop-down {
+		top: 1.5rem;
+		padding: 5px;
+		font-size: 13px;
+	}
+}
+/* end of navbar style*/
+textarea{
+	margin: 0;
+	padding: 0;
+}
+
+/* Dashboard */
+h4.dashboard_title{
+	background-color: #0D0D0D;
+	text-align: center;
+	color: #F0F0F2;
+	font-family: inherit;
+	margin: 0;
+	padding: 10px;
+}
+/* end */
