@@ -1,9 +1,10 @@
 cache: npm
 deploy: 
-  github-token: $GITHUB_TOKEN
   provider: pages
-  skip-cleanup: true
-  true: 
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  keep_history: true
+  on: 
     branch: develop
 install: 
   - "npm ci"
