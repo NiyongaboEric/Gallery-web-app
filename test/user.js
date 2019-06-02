@@ -10,7 +10,7 @@ const newUser = {
 	"first_name": 'new',
 	"last_name": 'user',
 	"address": 'kg 543 st',
-	"email": 'newuser10@gmail.com',
+	"email": 'newuser9@gmail.com',
 	"password": "12341",
 }
 
