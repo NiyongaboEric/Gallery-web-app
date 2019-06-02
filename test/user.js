@@ -3,7 +3,7 @@ const chaiHttp = require('chai-http');
 const expect = require('chai').expect;
 const should = require('chai').should();
 const assert = require('chai').assert;
-const server = require("../server.js");
+// const server = require("../server.js");
 
 chai.use(chaiHttp);
 
@@ -11,7 +11,7 @@ const newUser = {
 	"first_name": 'new',
 	"last_name": 'user',
 	"address": 'kg 543 st',
-	"email": 'newuser6@gmail.com',
+	"email": 'newuser7@gmail.com',
 	"password": "12341",
 }
 
@@ -33,25 +33,15 @@ const inputValidation = {
 
 
 describe('Registration form test', () => {
-	// it("should register a new user", (done) => {
-	// 	chai.request("http://localhost:3000")
-	// 	.post('/auth/register')
-	// 	.send(newUser)
-	// 	.end((req, res) => {
- //   expect(res).to.have.status(201);
- //  });
-	// 	done();
-	// });
-
-	it("should return successfuly message", (done) => {
+	it("should register a new user", (done) => {
 		chai.request("http://localhost:3000")
 		.post('/auth/register')
 		.send(newUser)
 		.end((req, res) => {
-   expect(res.body).to.have.property("message", "registered successfuly");
- 	});
- 	done();
- });
+   expect(res).to.have.status(201);
+  });
+		done();
+	});
 
 	it("should return error email already taken message", (done) => {
 		chai.request("http://localhost:3000")
@@ -59,16 +49,6 @@ describe('Registration form test', () => {
 		.send(emailAlreadyTaken)
 		.end((req, res) => {
 			expect(res.body).to.have.property("error", "email already taken");
-		});
-		done();
-	});
-
-	it("should return email already taken status code", (done) => {
-		chai.request("http://localhost:3000")
-		.post('/auth/register')
-		.send(emailAlreadyTaken)
-		.end((req, res) => {
-			(res).should.have.status(400);
 		});
 		done();
 	});
