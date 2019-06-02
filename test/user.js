@@ -37,7 +37,6 @@ describe('Registration form test', () => {
 			.post('/auth/register')
 			.send(newUser)
 			.end((req, res) => {
-				console.log(req, res, res.body);
 	   expect("foo").to.have.lengthOf(3);
 	  });
 			done();
@@ -48,7 +47,6 @@ describe('Registration form test', () => {
 			.post('/auth/register')
 			.send(newUser)
 			.end((req, res) => {
-				console.log(req, res, res.body);
 	   "foo".should.have.lengthOf(3);
 	  });
 			done();
@@ -59,7 +57,6 @@ describe('Registration form test', () => {
 			.post('/auth/register')
 			.send(newUser)
 			.end((req, res) => {
-				console.log(req, res, res.body);
 	   assert.lengthOf("foo", 3);
 	  });
 			done();
