@@ -3,7 +3,6 @@ const chaiHttp = require('chai-http');
 const expect = require('chai').expect;
 const should = require('chai').should();
 const assert = require('chai').assert;
-const server = require("../server.js");
 
 chai.use(chaiHttp);
 
@@ -11,7 +10,7 @@ const newUser = {
 	"first_name": 'new',
 	"last_name": 'user',
 	"address": 'kg 543 st',
-	"email": 'newuser5@gmail.com',
+	"email": 'newuser6@gmail.com',
 	"password": "12341",
 }
 

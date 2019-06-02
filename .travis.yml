@@ -16,7 +16,6 @@ node_js:
 notifications: 
   email: false
 script: 
-  - "nodemon server.js"
   - "npm run test"
 services: 
   - postgresql
