@@ -1,17 +1,19 @@
 cache: npm
 deploy: 
-  provider: pages
-  skip_cleanup: true
   github_token: $GITHUB_TOKEN
   keep_history: true
-  on: 
+  provider: pages
+  skip_cleanup: true
+  true: 
     branch: develop
 install: 
   - "npm ci"
 language: node_js
 node_js: 
-  - "node"
+  - node
 notifications: 
   email: false
 script: 
   - "npm run test"
+services: 
+  - postgresql
