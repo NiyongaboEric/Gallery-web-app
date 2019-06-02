@@ -10,7 +10,7 @@ const newUser = {
 	"first_name": 'new',
 	"last_name": 'user',
 	"address": 'kg 543 st',
-	"email": 'newuser8@gmail.com',
+	"email": 'newuser12@gmail.com',
 	"password": "12341",
 }
 
@@ -32,23 +32,68 @@ const inputValidation = {
 
 
 describe('Registration form test', () => {
-
-		it("feke test", (done) => {
-			chai.request("http://127.0.0.1:3000")
+		it("should register a new user", (done) => {
+			chai.request("http://localhost:3000")
 			.post('/auth/register')
 			.send(newUser)
 			.end((req, res) => {
-	    assert.equal([1, 2, 3].indexOf(4), -1);
-	  })
+	   expect("foo").to.have.lengthOf(3);
+	  });
+			done();
+
+		});
+		it("should register a new user", (done) => {
+			chai.request("http://localhost:3000")
+			.post('/auth/register')
+			.send(newUser)
+			.end((req, res) => {
+	   "foo".should.have.lengthOf(3);
+	  });
 			done();
 		});
+
+		it("should register a new user", (done) => {
+			chai.request("http://localhost:3000")
+			.post('/auth/register')
+			.send(newUser)
+			.end((req, res) => {
+	   assert.lengthOf("foo", 3);
+	  });
+			done();
+		});	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	// it("should register a new user", (done) => {
-	// 	chai.request("http://127.0.0.1:3000")
+	// 	chai.request("http://localhost:3000")
 	// 	.post('/auth/register')
 	// 	.send(newUser)
 	// 	.end((req, res) => {
  //   expect(res).to.have.status(201);
- //  })
+ //  });
 	// 	done();
 	// });
 

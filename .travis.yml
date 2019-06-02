@@ -1,17 +1,16 @@
 cache: npm
-default: 
-  cv1: "<%=ENV[NODE_TLS_REJECT_UNAUTHORIZED=0] %>"
 deploy: 
-  github-token: $GITHUB_TOKEN
   provider: pages
-  skip-cleanup: true
-  true: 
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  keep_history: true
+  on: 
     branch: develop
 install: 
   - "npm ci"
 language: node_js
 node_js: 
-  - "10"
+  - "node"
 notifications: 
   email: false
 script: 
