@@ -4,12 +4,7 @@ const expect = require('chai').expect;
 const should = require('chai').should();
 const assert = require('chai').assert;
 
-// set NODE_TLS_REJECT_UNAUTHORIZED=0
-var request = require('request').defaults({
-    strictSSL: false,
-    rejectUnauthorized: false
- });
- 
+// require('request').defaults({ rejectUnauthorized: false })
 chai.use(chaiHttp);
 
 const newUser = { 
