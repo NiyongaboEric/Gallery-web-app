@@ -6,8 +6,6 @@ const swaggerUI = require("swagger-ui-express");
 
 const app = express();
 
-app.set(NODE_TLS_REJECT_UNAUTHORIZED=0);
-
 //middlewares
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
