@@ -14,17 +14,20 @@ client.connect((error) => {
 	if (error) {
 		return console.error("could not connect to postgresql")
 	}
-		// client.query("CREATE TABLE usersFeke(user_id SERIAL PRIMARY KEY, first_name VARCHAR(500) NOT NULL,	last_name VARCHAR(500) NOT NULL,	address VARCHAR(500),	email VARCHAR(500) UNIQUE NOT NULL,	password VARCHAR(100) NOT NULL,	isAdmin Boolean,	Date_time TIMESTAMPTZ)")
-		// .then(res => console.log(res))
-		// .catch(error => console.log(error));
+		// client.query("CREATE TABLE usersFeke4(user_id SERIAL PRIMARY KEY, first_name VARCHAR(500) NOT NULL,	last_name VARCHAR(500) NOT NULL,	address VARCHAR(500),	email VARCHAR(500) UNIQUE NOT NULL,	password VARCHAR(100) NOT NULL,	isAdmin Boolean,	Date_time TIMESTAMPTZ)")
+		// .then(res => console.log('res',res))
+		// .catch(error => console.log('error',error));
 
 		//insert into heroku
-		let values = [request.body.first_name, request.body.last_name, request.body.address, request.body.email, request.body.password, false, new Date()];
-		client.query("INSERT INTO users (first_name, last_name, address, email, password, isAdmin, Date_time) VALUES($1,$2,$3,$4,$5,$6,$7)", values, (err, result) =>{
+		// let values = [request.body.first_name, request.body.last_name, request.body.address, request.body.email, request.body.password, false, new Date()];
+		let values = ["first", "second", "kimicanga", "me4@example.com", "i am pwd", false, new Date()];
+		client.query("INSERT INTO usersFeke4 (first_name, last_name, address, email, password, isAdmin, Date_time) VALUES($1,$2,$3,$4,$5,$6,$7)", values, (err, result) =>{
 		if (err) {
-			return reject({"error": "registration failed"});
+			return console.log({"error": "registration failed"});
+			//return reject({"error": "registration failed"});
 		}
-		return resolve({"message": "registered successfuly"});
+		return console.log({"message": "registered successfuly"})
+		//return resolve({"message": "registered successfuly"});
 	});
 });
 
