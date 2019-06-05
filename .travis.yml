@@ -1,10 +1,6 @@
-cache: npm
-install: 
-  - "npm ci"
+cache: 
+  directories: 
+    - node_modules
 language: node_js
 node_js: 
-  - node
-notifications: 
-  email: false
-script: 
-  - "npm run test"
+  - stable
