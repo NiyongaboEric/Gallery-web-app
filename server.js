@@ -24,3 +24,4 @@ app.listen(port, () => console.log(`the server is listening on port ${port}`));
 //swagger
 const swaggerDocument = require('./db/swagger.json');
 app.use('/swagger', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
+console.log('swagger touched');
