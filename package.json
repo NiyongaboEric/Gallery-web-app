@@ -4,6 +4,7 @@
   "description": "Gallery Web Application",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon server.js",
     "test": "mocha"
   },
   "author": "Eric",
