@@ -10,9 +10,9 @@ router.get('/register', (request, response) => {
 		db.query("SELECT * from users ", (err, result) =>{
 		if (err){
 
-			//return response.status(400).json({"error": "no information to display"});
 			console.log(err, result);
-			return response.status(400).json({request, response});
+			return response.status(400).json({"error": "no information to display"});
+			// return response.status(400).json({request, response});
 		}
 		return response.status(200).json(result.rows);
 	})
