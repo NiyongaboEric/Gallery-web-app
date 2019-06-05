@@ -9,8 +9,7 @@ const bcrypt = require("bcrypt");
 router.get('/register', (request, response) => {
 		db.query("SELECT * from users ", (err, result) =>{
 		if (err){
-
-			console.log(err, result);
+			
 			return response.status(400).json({"error": "no information to display"});
 			// return response.status(400).json({request, response});
 		}
