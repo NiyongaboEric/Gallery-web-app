@@ -1,6 +1,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const swaggerJSDoc = require("swagger-jsdoc");
+const swaggerUI = require("swagger-ui-express");
 
 const app = express();
 
@@ -16,10 +18,9 @@ app.use('/auth', auth);
 //static files
 app.use('/', express.static('public'));
 
-//api doc
-const docs = require("./router/docs.js");
-app.use('/v1', docs);
-
 let port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`the server is listening on port ${port}`));
 
+//swagger
+const swaggerDocument = require('./db/swagger.json');
+app.use('/swagger', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
