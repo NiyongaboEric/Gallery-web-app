@@ -55,7 +55,7 @@ router.post('/register', (request, response, next) => {
 		let values = [request.body.first_name, request.body.last_name, request.body.address, request.body.email, request.body.password, false, new Date()];
 		db.query("INSERT INTO users (first_name, last_name, address, email, password, isAdmin, Date_time) VALUES($1,$2,$3,$4,$5,$6,$7)", values, (err, result) =>{
 			// if (err) {
-			// 	return reject({"error": "registration failed"});
+			// 	return reject({"error": "registration failed, please try again"});
 			// }
 			return resolve({"message": "registered successfuly"});
 		});
