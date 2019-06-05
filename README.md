@@ -18,10 +18,10 @@ it is designed using swagger package.
 
 #i begin with user registration where i CRUD application.
     		#How user api works?
-    - create a TAG to separate the Api created
-    - create unique and reusable models
-    - remember to combine api with the same path
-    - repeat the same process for other API
+    - create a TAG to separate the Api created.
+    - create unique and reusable models.
+    - remember to combine api with the same path.
+    - repeat the same process for other API.
 					
 		|HTTP|route |Example|
 		|------|----|-------|

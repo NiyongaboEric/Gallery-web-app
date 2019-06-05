@@ -107,4 +107,5 @@ router.delete('/register/:id', (request, response, next) => {
 	});	
 })
 
+
 module.exports = router;
