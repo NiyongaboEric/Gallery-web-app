@@ -8,7 +8,7 @@
 
 [![Coverage Status](https://coveralls.io/repos/github/NiyongaboEric/Gallery-web-app/badge.svg?branch=develop)](https://coveralls.io/github/NiyongaboEric/Gallery-web-app?branch=develop)
 
-#Swagger Api Docs
+#Swagger Api Docs.
 it is designed using swagger package.
 
 ```
