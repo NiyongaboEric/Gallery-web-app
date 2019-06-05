@@ -33,12 +33,6 @@ const inputValidation = {
 	"password": "12341",
 }
 
-describe('test', () => {
-  it('should return a string', () => {
-    expect('ci with travis').to.equal('ci with travis');
-  });
-});
-
 describe('Registration form test', () => {
 	it("should register a new user", (done) => {
 		chai.request("http://localhost:3000")
