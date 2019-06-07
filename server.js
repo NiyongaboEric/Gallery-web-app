@@ -13,10 +13,10 @@ app.use(cors());
 
 //Routes
 const auth = require("./router/auth.js");
-const auth = require("./router/online-auth.js");
+const online_auth = require("./router/online-auth.js");
 
 app.use('/auth', auth);
-app.use('/online-auth', auth);
+app.use('/online-auth', online_auth);
 
 //static files
 app.use('/', express.static('public'));
