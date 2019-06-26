@@ -8,6 +8,9 @@
 
 [![Coverage Status](https://coveralls.io/repos/github/NiyongaboEric/Gallery-web-app/badge.svg?branch=develop)](https://coveralls.io/github/NiyongaboEric/Gallery-web-app?branch=develop)
 
+#codeClimate
+[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
+
 #Swagger Api Docs.
 it is designed using swagger package.
 
